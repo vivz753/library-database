@@ -5,7 +5,7 @@ import { useState, useReducer } from "react"
 import Modal from "@components/core/Modal"
 import AddBook from "@components/core/AddBook"
 import BooksList from "@components/core/BooksList"
-import { Book } from "@schemas/global"
+import { Book, BookAction } from "@schemas/global"
 import { BooksContext, BooksDispatchContext } from "@components/core/BooksContext"
 
 const webTitle = `Vivian's Library App`
@@ -37,7 +37,7 @@ const Home: NextPage = () => {
 
 export default Home
 
-const booksReducer = (books: Book[], action: { type: "added" | "changed" | "deletedAll"; book: Book }): Book[] => {
+const booksReducer = (books: Book[], action: BookAction ): Book[] => {
   switch (action.type) {
     case "added": {
       return [

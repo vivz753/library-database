@@ -7,5 +7,11 @@ export interface Book {
   description: string
 }
 
+export type BookAction =
+  { type: "added" ; book: Book} |
+  { type: "changed" ; book: Book} |
+  { type: "deletedAll"; book: Book } |
+  { type: string; book: Book}
+
 export type SortOption = "Order Added" | "Title"
 
