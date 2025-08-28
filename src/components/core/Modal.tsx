@@ -29,7 +29,7 @@ const Modal = forwardRef<HTMLDivElement, ModalProps>(({ show, onClose, children,
       console.log("saving bookDetails", bookDetails)
       // push the book into the Context
 
-      dispatch({
+      dispatch!({
         type: "changed",
         book: bookDetails,
       })

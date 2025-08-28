@@ -55,7 +55,7 @@ const AddBook = ({}) => {
           if (dupeFound) throw Error("Already found an existing book with the ID: " + newBook.id)
         }
 
-        dispatch!!({
+        dispatch!({
           type: "added",
           book: newBook,
         })

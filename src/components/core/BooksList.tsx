@@ -48,8 +48,9 @@ const BooksList: React.FC<
           </div>
           <button
             onClick={() =>
-              dispatch({
+              dispatch!({
                 type: "deletedAll",
+                book: undefined
               })
             }
             className="shrink-0 rounded-md border border-purple-500 px-4 py-2 text-purple-500 hover:bg-purple-500 hover:text-white active:text-purple-200"
