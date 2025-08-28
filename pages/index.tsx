@@ -1,6 +1,6 @@
 import type { NextPage } from "next"
 import Head from "next/head"
-import { useState, useReducer, useEffect } from "react"
+import { useState, useReducer } from "react"
 
 import Modal from "@components/core/Modal"
 import AddBook from "@components/core/AddBook"
@@ -37,7 +37,7 @@ const Home: NextPage = () => {
 
 export default Home
 
-function booksReducer(books: Book[], action: { type: "added" | "changed" | "deletedAll"; book: Book }) {
+const booksReducer = (books: Book[], action: { type: "added" | "changed" | "deletedAll"; book: Book }): Book[] => {
   switch (action.type) {
     case "added": {
       return [
@@ -48,6 +48,7 @@ function booksReducer(books: Book[], action: { type: "added" | "changed" | "dele
           description: action.book.description,
           author: action.book.author,
           year: action.book.year,
+          createdAt: Date.now(),
         },
       ]
     }
