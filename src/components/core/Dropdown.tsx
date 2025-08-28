@@ -43,7 +43,7 @@ export const Dropdown: FC<React.PropsWithChildren<DropdownProps>> = ({
 		// TODO: add up/down arrows for selection
   }
 
-  const toggleOptions = (): void => setShowOptions((show) => !show)
+  const toggleOptions = (): void => setShowOptions((show: boolean) => !show)
 
   return (
     <div

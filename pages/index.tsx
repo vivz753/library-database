@@ -43,18 +43,18 @@ const booksReducer = (books: Book[], action: BookAction ): Book[] => {
       return [
         ...books,
         {
-          id: action.book.id,
-          title: action.book.title,
-          description: action.book.description,
-          author: action.book.author,
-          year: action.book.year,
+          id: action.book?.id || '',
+          title: action.book?.title || '',
+          description: action.book?.description || '',
+          author: action.book?.author || '',
+          year: action.book?.year || '',
           createdAt: Date.now(),
         },
       ]
     }
     case "changed": {
       return books.map((b) => {
-        if (b.id === action.book.id) {
+        if (b.id === action.book?.id) {
           return action.book
         } else {
           return b

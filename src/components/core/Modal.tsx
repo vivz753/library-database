@@ -19,7 +19,7 @@ const Modal = forwardRef<HTMLDivElement, ModalProps>(({ show, onClose, children,
   const [bookDetails, setBookDetails] = useState<Book>(book)
   const dispatch = useContext(BooksDispatchContext)
 
-  const saveBook = (e) => {
+  const saveBook = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setSuccess("")
     setError("")

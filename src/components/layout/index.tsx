@@ -1,4 +1,3 @@
-import Button from "../core/Button"
 import Link from "next/link"
 import { FaGithub } from "react-icons/fa"
 import { MdOutlineMailOutline } from "react-icons/md"
